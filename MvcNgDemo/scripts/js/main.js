@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<div class=\"row col-md-12\">\r\n    <h1>About</h1>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -104,7 +104,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"alert alert-primary\">\n    <a [routerLink] =\"['/home']\">Home</a><br/>\n    <a [routerLink]=\"['/contact']\">Contact</a><br/>\n    <a [routerLink]=\"['/about']\">About</a><br/>\n    <br/><br/>\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<!--<div class=\"alert alert-primary\">\r\n    <a [routerLink]=\"['/home']\">Home</a><br />\r\n    <a [routerLink]=\"['/contact']\">Contact</a><br />\r\n    <a [routerLink]=\"['/about']\">About</a><br />\r\n    <br /><br />\r\n\r\n</div>-->\r\n\r\n<!-- Navigation -->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark static-top\">\r\n    <div class=\"container\">\r\n        <a class=\"navbar-brand\" href=\"#\">Start Bootstrap</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/home']\">Home</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/contact']\">Contact</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<!-- Page Content -->\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -165,12 +165,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
 /* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _customer_data_customer_data_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./customer-data/customer-data.component */ "./src/app/customer-data/customer-data.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -200,7 +202,8 @@ var AppModule = /** @class */ (function () {
                 _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
                 _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"],
                 _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"]
+                _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
+                _customer_data_customer_data_component__WEBPACK_IMPORTED_MODULE_11__["CustomerDataComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -239,7 +242,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  contact works!\n</p>\n"
+module.exports = "<div class=\"row col-md-12\">\r\n    <h1>Contact</h1>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -284,6 +287,73 @@ var ContactComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/customer-data/customer-data.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/customer-data/customer-data.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/customer-data/customer-data.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/customer-data/customer-data.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card col-md-12\" style=\"margin-top: 5px;margin-bottom: 5px;\">\r\n    <!-- <div class=\"card-header bg-dark text-white\">{{ customer.FirstName }}</div> -->\r\n    <div class=\"card-body\">\r\n        <h5 class=\"card-title\">{{ customer.FirstName }}</h5>\r\n        <p class=\"card-text\">\r\n            ID: {{ customer.Id }}<br />\r\n            First Name: {{ customer.FirstName }}<br />\r\n            Last Name: {{ customer.LastName }}<br />\r\n            Phone: {{ customer.Phone }}<br />\r\n            City: {{ customer.City }}<br />\r\n            Country: {{ customer.Country }}\r\n        </p>\r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/customer-data/customer-data.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/customer-data/customer-data.component.ts ***!
+  \**********************************************************/
+/*! exports provided: CustomerDataComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerDataComponent", function() { return CustomerDataComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CustomerDataComponent = /** @class */ (function () {
+    function CustomerDataComponent() {
+    }
+    CustomerDataComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CustomerDataComponent.prototype, "customer", void 0);
+    CustomerDataComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-customer-data',
+            template: __webpack_require__(/*! ./customer-data.component.html */ "./src/app/customer-data/customer-data.component.html"),
+            styles: [__webpack_require__(/*! ./customer-data.component.css */ "./src/app/customer-data/customer-data.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CustomerDataComponent);
+    return CustomerDataComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.component.css":
 /*!*****************************************!*\
   !*** ./src/app/home/home.component.css ***!
@@ -302,7 +372,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "<div class=\"row\">\r\n    <h1>Home</h1>\r\n    <div class=\"col-md-12\">\r\n        <button type=\"button\" (click)=\"makeRequest()\" class=\"btn btn-primary\">Make Request</button>\r\n        <div *ngIf=\"loading\" style=\"width: 100px; height:100px; margin: 0 auto; border-radius: 10px; box-shadow: 1px 1px 10px 2px #ccc; z-index: 1000; padding: 20px;\">Loading</div>\r\n        <br /><br />\r\n        <div *ngIf=\"data != null\">\r\n            <app-customer-data *ngFor='let customer of data' [customer]=\"customer\" style=\"float: left;\" class=\"col-md-4\"></app-customer-data>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -317,6 +387,7 @@ module.exports = "<p>\n  home works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -327,10 +398,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(http) {
+        this.http = http;
     }
     HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent.prototype.makeRequest = function () {
+        var _this = this;
+        this.loading = false;
+        this.http.request('/api/Customers/GetCustomers')
+            .subscribe(function (res) {
+            _this.data = res.json();
+            _this.loading = false;
+        });
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -338,7 +420,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -365,7 +447,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  login works!\n</p>\n"
+module.exports = "<p>\r\n  login works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -471,7 +553,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Omatics\Documents\visual studio 2015\Projects\MvcNgDemo\MvcNgDemo\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Mihir\Source\Repos\MvcNgDemo\MvcNgDemo\src\main.ts */"./src/main.ts");
 
 
 /***/ })

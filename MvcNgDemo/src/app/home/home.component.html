@@ -1,3 +1,11 @@
-<p>
-  home works!
-</p>
+<div class="row">
+    <h1>Home</h1>
+    <div class="col-md-12">
+        <button type="button" (click)="makeRequest()" class="btn btn-primary">Make Request</button>
+        <div *ngIf="loading" style="width: 100px; height:100px; margin: 0 auto; border-radius: 10px; box-shadow: 1px 1px 10px 2px #ccc; z-index: 1000; padding: 20px;">Loading</div>
+        <br /><br />
+        <div *ngIf="data != null">
+            <app-customer-data *ngFor='let customer of data' [customer]="customer" style="float: left;" class="col-md-4"></app-customer-data>
+        </div>
+    </div>
+</div>
