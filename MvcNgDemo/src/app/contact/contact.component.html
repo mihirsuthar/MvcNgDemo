@@ -1,3 +1,8 @@
-<div class="row col-md-12">
+<div class="row">
     <h1>Contact</h1>
+    <div class="col-md-12">
+        <div *ngIf="id != null">
+            <app-customer-data [customer]="data" style="float: left;" class="col-md-4"></app-customer-data>
+        </div>
+    </div>
 </div>

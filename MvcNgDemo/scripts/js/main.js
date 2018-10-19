@@ -104,7 +104,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<!--<div class=\"alert alert-primary\">\r\n    <a [routerLink]=\"['/home']\">Home</a><br />\r\n    <a [routerLink]=\"['/contact']\">Contact</a><br />\r\n    <a [routerLink]=\"['/about']\">About</a><br />\r\n    <br /><br />\r\n\r\n</div>-->\r\n\r\n<!-- Navigation -->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark static-top\">\r\n    <div class=\"container\">\r\n        <a class=\"navbar-brand\" href=\"#\">Start Bootstrap</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/home']\">Home</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/contact']\">Contact</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<!-- Page Content -->\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<!--<div class=\"alert alert-primary\">\r\n    <a [routerLink]=\"['/home']\">Home</a><br />\r\n    <a [routerLink]=\"['/contact']\">Contact</a><br />\r\n    <a [routerLink]=\"['/about']\">About</a><br />\r\n    <br /><br />\r\n\r\n</div>-->\r\n\r\n<!-- Navigation -->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark static-top\">\r\n    <div class=\"container\">\r\n        <a class=\"navbar-brand\" href=\"#\">Start Bootstrap</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/home']\">Home</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/contact']\">Contact</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/contact', 3]\">Specific Contact</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" [routerLink]=\"['/about']\">About</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<!-- Page Content -->\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -189,6 +189,7 @@ var routes = [
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_8__["AboutComponent"] },
     { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"] },
+    { path: 'contact/:id', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_9__["ContactComponent"] },
     { path: 'contactus', redirectTo: 'contact' },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"] }
 ];
@@ -242,7 +243,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row col-md-12\">\r\n    <h1>Contact</h1>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\r\n    <h1>Contact</h1>\r\n    <div class=\"col-md-12\">\r\n        <div *ngIf=\"id != null\">\r\n            <app-customer-data [customer]=\"data\" style=\"float: left;\" class=\"col-md-4\"></app-customer-data>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -257,6 +258,8 @@ module.exports = "<div class=\"row col-md-12\">\r\n    <h1>Contact</h1>\r\n</div
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -267,8 +270,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    function ContactComponent(route, http) {
+        var _this = this;
+        this.route = route;
+        this.http = http;
+        this.route.params.subscribe(function (params) {
+            _this.id = params['id'];
+        });
+        this.http.request('/api/Customers/GetCustomer/' + this.id)
+            .subscribe(function (res) {
+            _this.data = res.json();
+            console.log('Request completed: ' + res.json());
+        });
     }
     ContactComponent.prototype.ngOnInit = function () {
     };
@@ -278,7 +294,7 @@ var ContactComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./contact.component.html */ "./src/app/contact/contact.component.html"),
             styles: [__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
     ], ContactComponent);
     return ContactComponent;
 }());

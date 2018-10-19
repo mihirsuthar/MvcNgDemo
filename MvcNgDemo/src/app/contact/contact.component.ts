@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+    data: object;
+    id: string;
 
-  constructor() { }
+    constructor(private route: ActivatedRoute, private http: Http) {
+        this.route.params.subscribe(params => {
+            this.id = params['id'];
+        });
 
-  ngOnInit() {
-  }
+        this.http.request('/api/Customers/GetCustomer/' + this.id)
+            .subscribe((res: Response) => {
+                this.data = res.json();
+            });
+    }
+
+    ngOnInit() {
+        
+    }
 
 }

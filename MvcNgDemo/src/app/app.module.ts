@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'contact/:id', component: ContactComponent },
     { path: 'contactus', redirectTo: 'contact' },
     { path: 'login', component: LoginComponent }
 ];

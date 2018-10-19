@@ -10,7 +10,6 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-
 namespace MvcNgDemo.Controllers
 {
     [RoutePrefix("api/Customers")]
@@ -26,16 +25,20 @@ namespace MvcNgDemo.Controllers
         }
 
         // GET: api/Customers/5
-        [ResponseType(typeof(Customer))]
+        [Route("GetCustomer/{id}")]
+        //[ResponseType(typeof(Customer))]
         public IHttpActionResult GetCustomer(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
+            var customer = db.Customers.Find(id);//Where(c => c.Id == id);//.Select(c => new { c.Id, c.FirstName, c.LastName, c.Phone, c.City, c.Country });
 
-            return Ok(customer);
+            return Json(new { customer.Id, customer.FirstName, customer.LastName, customer.Phone, customer.City, customer.Country });
+            //Customer customer = db.Customers.Find(id);
+            //if (customer == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return Ok(customer);
         }
 
         // PUT: api/Customers/5
